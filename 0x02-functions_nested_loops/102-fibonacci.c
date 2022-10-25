@@ -23,11 +23,11 @@ int main(void)
 		}
 		else
 		{
-			printf("%/d\n", b);
+			printf("%d\n", b);
 		}
 		next = b + c;
 		b = c;
-		c = next
+		c = next;
 	}
 	return (0);
 }
