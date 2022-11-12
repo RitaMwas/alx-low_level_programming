@@ -10,17 +10,17 @@
 
 char *rot13(char *s)
 {
-	int n, m;
+	int i, j;
 	char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char lookupTable[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (n = 0; s[n] != 0; n++)
+	for (i = 0; s[i] != 0; i++)
 	{
-		for (m = 0; alphabet[m] != 0; m++)
+		for (j = 0; alphabet[j] != 0; j++)
 		{
-			if (s[n] == aplhabet[m])
+			if (s[i] == aplhabet[j])
 			{
-				s[n] = lookupTable[m];
+				s[i] = lookupTable[j];
 				break;
 			}
 		}
