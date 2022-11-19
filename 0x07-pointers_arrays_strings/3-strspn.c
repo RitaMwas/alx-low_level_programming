@@ -11,23 +11,20 @@
 
 unsigned int _strpn(char *s, char *accept)
 {
-	int m, n;
-	int counter = 0;
+	unsigned int a = 0, b, t = 0;
 
-	for (m = 0; s[m] != 0; m++)
+	while (accept[a])
 	{
-		for (n = 0; accept[n] != 0; n++)
+		b = 0;
+		while (s[b] != 32)
 		{
-			if (accept[n] == s[m])
+			if (accept[a] == s[b])
 			{
-				counter++;
-				break;
+				t++;
 			}
+			b++;
 		}
-		if (accept[n] == 0)
-		{
-			break;
-		}
+		a++;
 	}
-	return (counter);
+	return (t);
 }
