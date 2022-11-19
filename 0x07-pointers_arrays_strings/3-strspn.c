@@ -11,24 +11,24 @@
 
 unsigned int _strpn(char *s, char *accept)
 {
-	int i, j;
-	unsigned int n = 0;
+	unsigned int bytes = 0;
+	int index;
 
-	if (s == 0 || accept == 0)
-		return (n);
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (s)
 	{
-		for (j = 0; accept[j] != '\0'; j++)
+		for (index = 0; accept[index]; index++)
 		{
-			if (s[i] == accept[j])
+			if (*s == accept[index])
 			{
-				n++;
+				bytes++;
 				break;
 			}
-			if (accept[j + 1] == '\0' && s[i] != accept[j])
-				return (n);
+			else if (accept[index + 1] == '\0')
+				return (bytes);
 		}
+
+		s++;
 	}
-	return (n);
+
+	return (bytes);
 }
