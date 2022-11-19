@@ -12,7 +12,7 @@
 unsigned int _strpn(char *s, char *accept)
 {
 	int m, n;
-	int count = 0;
+	int counter = 0;
 
 	for (m = 0; s[m] != 0; m++)
 	{
@@ -20,7 +20,7 @@ unsigned int _strpn(char *s, char *accept)
 		{
 			if (accept[n] == s[m])
 			{
-				count++;
+				counter++;
 				break;
 			}
 		}
@@ -29,5 +29,5 @@ unsigned int _strpn(char *s, char *accept)
 			break;
 		}
 	}
-	return (count);
+	return (counter);
 }
