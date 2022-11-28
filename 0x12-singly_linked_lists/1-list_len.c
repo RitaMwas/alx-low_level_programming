@@ -1,5 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
+#include <stddef.h>
 
 /**
  * list_len - Entry point
@@ -11,12 +12,12 @@
 
 size_t list_len(const list_t *h)
 {
-	size_t a = 0;
+	size_t n = 0;
 
-	while (h != NULL)
+	while (h)
 	{
-		a++;
+		n++;
 		h = h->next;
 	}
-	return (a);
+	return (n);
 }
