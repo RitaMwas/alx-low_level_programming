@@ -1,69 +1,65 @@
 #include "main.h"
 
+int find_strlen(char *s);
+int check_palindrome(char *s, int len, int index);
+int is_palindrome(char *s);
+
+/**
+ * find_strlen - Returns the length of a string
+ * @s: The string to be measured
+ * Return: The length of the string
+ */
+
+int find_strlen(char *s)
+{
+	int len = 0;
+
+	if (*(s + len))
+	{
+		len++;
+		len += find_strlen(s + len);
+	}
+	return (len);
+}
+
+/**
+ * check_palindrome - Checks if a string is a palindrome
+ * @s: The string to be checked
+ * @len: The length of s
+ * @index: The index of the string to be checked
+ * Return: If the string is a palindrome - 1
+ * If the string is not a palindrome - 0
+ */
+
+int check_palindrome(char *s, int len, int index)
+{
+	if (s[index] == s[len / 2])
+	{
+		return (1);
+	}
+
+	if (s[index] == s[len - index - 1])
+	{
+		return (check_palindrome(s, len, index + 1));
+	}
+	return (0);
+}
+
 /**
  * is_palindrome - Checks if a string is a palindrome
- * @s: Pointer to string.
- * Return: Returns 1 if palindrome, 0 if not
+ * @s: The string to be checked
+ * Return: If the string is a palindrome - 1
+ * If the string is not a palindrome - 0
  */
 
 int is_palindrome(char *s)
 {
-	int b = 0;
-	int e = get_len(s) - 1;
+	int index = 0;
+	int len = find_strlen(s);
 
-	if (s[b] == 0)
+	if (!(*s))
 	{
 		return (1);
 	}
-	else
-	{
-		return (check_match(&s[b], &s[e]));
-	}
-}
-
-/**
- * check_match - Checks if characters in alternate positions in a string match
- * @big: Pointer to beginning address as at last function call
- * @end: Pointer to ending address as at last function call
- * Return: Returns 0 if not matching, 1 if matching
- */
-
-int check_match(char *big, char *end)
-{
-	if (big < end)
-	{
-		if (*(big) == *(end))
-		{
-			return (check_match((++big), (--end)));
-		}
-		else
-		{
-			return (0);
-		}
-	}
-	else
-	{
-		return (1);
-	}
-}
-
-/**
- * get_len - Uses recursion as opposed to loops to get the length of a string
- * @s: Pointer to string
- * Return: Returns length of string
- */
-
-int get_len(char *s)
-{
-	int i = 0, len = 0;
-
-	if (s[i])
-	{
-		len += get_len(&s[++i]);
-		return (++len);
-	}
-	else
-	{
-		return (0);
-	}
+	return (check_palindrome(s, len, index));
 }
