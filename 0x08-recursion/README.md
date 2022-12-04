@@ -7,3 +7,7 @@ A function that prints a string, followed by a new line.
 A function that prints a string in reverse.
 ## 2-strlen\_recursion.c
 A function that returns the length of a string.
+## 3-factorial.c
+A function that returns the factorial of a given number.
+If n is lower than 0, the function should return -1 to indicate an error
+Factorial of 0 is 1
