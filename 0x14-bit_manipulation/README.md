@@ -25,3 +25,6 @@ A function that sets the value of a bit to 0 at a given index.
 ## 5-flip\_bits.c
 A function that returns the number of bits you would need to flip to get from one number to another
 * You are not allowed to use the % or / operators
+## 100-get\_endianness.c
+A function that checks the endianness.
+* Returns: 0 if big endian, 1 if little endian
