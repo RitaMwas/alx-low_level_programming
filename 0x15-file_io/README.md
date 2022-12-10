@@ -23,3 +23,17 @@ A function that appends text at the end of a file.
 * Do not create the file if it does not exist
 * If ***filename*** is ***NULL*** return **-1**
 * If ***text_content*** is ***NULL***, do not add anything to the file. Return **1** if the file exists and **-1** if the file does not exist or if you do not have the required permissions to write the file
+## 3-cp.c
+A program that copies the content of a file to another file.
+* Usage: ***cp file\_from file\_to***
+* if the number of argument is not the correct one, exit with code **97** and print ***Usage: cp file\_from file\_to,followed by a new line, on the ***POSIX*** standard error
+* if ***file\_to*** already exists, truncate it
+* if ***file\_from*** does not exist, or if you can not read it, exit with code **98** and print ***Error: Can't read from file NAME\_OF\_THE\_FILE***, followed by a new line, on the ***POSIX*** standard error
+> * where ***NAME\_OF\_THE\_FILE*** is the first argument passed to your program
+* if you can not create or if ***write*** to ***file\_to*** fails, exit with code **99** and print ***Error: Can't write to NAME\_OF\_THE\_FILE***, followed by a new line, on the ***POSIX*** standard error
+> * where ***NAME\_OF\_THE\_FILE*** is the second argument passed to your program
+* if you can not close a file descriptor , exit with code **100** and print ***Error: Cannot close fd FD\_VALUE***, followed by a new line, on the ***POSIX*** standard error
+> * where ***FD\_VALUE*** is the value of the file descriptor
+* Permissions of the created file: ***rw-rw-r--***. If the file already exists, do not change the permissions
+* You must read **1,024** bytes at a time from the ***file\_from*** to make less system calls. Use a buffer
+* You are allowed to use ***dprintf***
