@@ -29,7 +29,7 @@ A program that copies the content of a file to another file.
 * if the number of argument is not the correct one, exit with code **97** and print ***Usage: cp file\_from file\_to***,followed by a new line, on the ***POSIX*** standard error
 * if ***file\_to*** already exists, truncate it
 * if ***file\_from*** does not exist, or if you can not read it, exit with code **98** and print ***Error: Can't read from file NAME\_OF\_THE\_FILE***, followed by a new line, on the ***POSIX*** standard error
-> * where ***NAME\_OF\_THE\_FILE*** is the first argument passed to your program
+    * where ***NAME\_OF\_THE\_FILE*** is the first argument passed to your program
 * if you can not create or if ***write*** to ***file\_to*** fails, exit with code **99** and print ***Error: Can't write to NAME\_OF\_THE\_FILE***, followed by a new line, on the ***POSIX*** standard error
 > * where ***NAME\_OF\_THE\_FILE*** is the second argument passed to your program
 * if you can not close a file descriptor , exit with code **100** and print ***Error: Cannot close fd FD\_VALUE***, followed by a new line, on the ***POSIX*** standard error
