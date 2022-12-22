@@ -16,7 +16,7 @@ A function that returns a pointer to a newly allocated space in memory, which co
 * The `_strdup()` function returns a pointer to a new string which is a duplicate of the string `str`. Memory for the new string is obtained with `malloc`, and can be freed with `free`.
 * Returns `NULL` if str = NULL
 * On success, the `_strdup` function returns a pointer to the duplicated string. It returns `NULL` if insufficient memory was available
-*FYI: The standard library provides a similar function: `strdup`. Run `man strdup` to learn more*
+* FYI: The standard library provides a similar function: `strdup`. Run `man strdup` to learn more*
 ## 2-str_concat.c
 A function that concatenates two strings.
 * Prototype: `char *str_concat(char *s1, char *s2);`
